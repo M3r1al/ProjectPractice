@@ -54,7 +54,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        _isGrounded = other.gameObject.CompareTag("Ground");
+        if (other.gameObject.CompareTag("Ground"))
+            _isGrounded = true;
     }
 
     // private void OnTriggerExit2D(Collider2D other)

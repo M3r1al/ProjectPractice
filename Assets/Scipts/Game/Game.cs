@@ -7,8 +7,10 @@ public static class Game
 
     public enum GameState
     {
+        Paused = -2,
         Lobby = -1,
         None = 0,
-        Died = 1
+        Died = 1,
+        Completed = 2,
     }
 }
