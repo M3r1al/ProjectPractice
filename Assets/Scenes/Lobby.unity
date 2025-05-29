@@ -211,8 +211,12 @@ MonoBehaviour:
   levelSlotPrefab: {fileID: 7871325336515169886, guid: 4a5b35ea79ac248c6873103f34c96b4e, type: 3}
   parent: {fileID: 619345364}
   levelData:
-  - sceneNumber: 1
+  - sceneNumber: 0
     levelNumber: 1
+  - sceneNumber: 1
+    levelNumber: 2
+  - sceneNumber: 2
+    levelNumber: 3
 --- !u!1 &619345363
 GameObject:
   m_ObjectHideFlags: 0

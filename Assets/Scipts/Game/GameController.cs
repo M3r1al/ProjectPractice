@@ -46,6 +46,8 @@ public class GameController : MonoBehaviour
 
     public void RestartLevel()
     {
+        Game.SetState(Game.GameState.None);
+
         completeTime = 0;
 
         foreach (var levelObject in levelObjects)
@@ -65,10 +67,11 @@ public class GameController : MonoBehaviour
 
     private void MovePlayer(Rigidbody2D player, Vector3 position)
     {
-        player.gameObject.SetActive(false);
-        player.position = position;
-        player.gameObject.SetActive(true);
         player.linearVelocity = Vector3.zero;
         player.angularVelocity = 0;
+        player.gameObject.SetActive(false);
+        player.transform.position = position;
+        player.transform.rotation = Quaternion.identity;
+        player.gameObject.SetActive(true);
     }
 }
