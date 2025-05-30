@@ -10,6 +10,7 @@ public class NewCameraController : MonoBehaviour
     [SerializeField] private float defaultDistance;
     [SerializeField] private float lerpSpeed;
     [SerializeField] private float sideSpace = 1;
+    [SerializeField] private float verticalOffset = 2f;
     private Camera _camera;
     private float _aspect;
     private float _edgeDistance;
@@ -61,7 +62,7 @@ public class NewCameraController : MonoBehaviour
         else
             newSize = minimumSize * distance / defaultDistance;
 
-        newPos = (player1.position + player2.position) / 2 + offset;
+        newPos = (player1.position + player2.position) / 2 + offset + new Vector3(0, verticalOffset, 0);
     }
 
     private void LerpValues()
@@ -78,9 +79,9 @@ public class NewCameraController : MonoBehaviour
     private void LerpOnePlayer()
     {
         if (player1.gameObject.activeSelf)
-            newPos = player1.position + offset;
+            newPos = player1.position + offset + new Vector3(0, verticalOffset, 0);
         else
-            newPos = player2.position + offset;
+            newPos = player2.position + offset + new Vector3(0, verticalOffset, 0);
         newSize = minimumSize;
     }
     #endregion
